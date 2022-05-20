@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+
+    RewriteRule ^index index.php [NC,L]
+    RewriteRule ^main main.php [NC,L]
+    RewriteRule ^book-room-edit/([0-9]+)/$ book-room-edit.php?mid=$1
+    RewriteRule ^book-room-edit/([0-9]+)$ /book-room-edit/$1/ [R]
+
+
+</IfModule>

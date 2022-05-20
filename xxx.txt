@@ -1,0 +1,70 @@
+<div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-comments-o"></i></span>
+
+            <div class="info-box-content">
+			<?php
+				$y3=$y2-1;
+				$sql="
+				select count(id) as total from sv_report where date between '$y3-10-01' and '$y2-09-30' ";
+
+				$result=mysql_query($sql,$conn) or die ("เอ็กซิคิวต์คำสั่งไม่ได้");
+				while ($rs=mysql_fetch_array($result)){
+				$total=$rs['total'];
+				}
+				?>
+              <span class="info-box-text">ความต้องการ</span>
+              <span class="info-box-number"><?php echo $total?>  <small>รายการ</small></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+		<div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-files-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">ดำเนินการแล้ว </span>
+              <span class="info-box-number">0 <small>รายการ</small></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">ยังไม่ดำเนินการ </span>
+              <span class="info-box-number">0 <small>รายการ</small></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">New Members</span>
+              <span class="info-box-number">2,000</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
